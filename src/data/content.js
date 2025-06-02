@@ -1,6 +1,6 @@
 export const services = [
   {
-    icon: "https://images.squarespace-cdn.com/content/v1/6836cdafaddd114b53af3bb5/5398a9ef-ca84-4ad4-8fb4-536b3a447704/target.png",
+    icon: "/images/services/target.png",
     title: "Impact Measurement",
     description: "Design impact frameworks using IRIS+, SDG mapping, and stakeholder logic to define what matters most—and how to measure it.",
     features: [
@@ -10,7 +10,7 @@ export const services = [
     ]
   },
   {
-    icon: "https://images.squarespace-cdn.com/content/v1/6836cdafaddd114b53af3bb5/d03cb43c-b6da-4c94-8c02-fda27bd52dff/project-management.png",
+    icon: "/images/services/project-management.png",
     title: "Impact Management",
     description: "Help organisations build systems that monitor, evaluate, and improve their impact performance—while aligning with global standards like ISO 14001.",
     features: [
@@ -21,7 +21,7 @@ export const services = [
     ]
   },
   {
-    icon: "https://images.squarespace-cdn.com/content/v1/6836cdafaddd114b53af3bb5/585a53f1-97af-4c9c-8a15-236801db77ff/speech-bubble.png",
+    icon: "/images/services/speech-bubble.png",
     title: "Impact Communication",
     description: "Turn complex data into compelling stories that move stakeholders—from investors to beneficiaries.",
     features: [
@@ -32,7 +32,7 @@ export const services = [
     ]
   },
   {
-    icon: "https://images.squarespace-cdn.com/content/v1/6836cdafaddd114b53af3bb5/ea897d3b-10f2-43f3-81f6-62fbe0ae62cb/cpu.png",
+    icon: "/images/services/cpu.png",
     title: "Impact Tech",
     description: "We deploy tech to scale your impact operations—from data collection to reporting to stakeholder engagement.",
     features: [
@@ -46,7 +46,7 @@ export const services = [
 
 export const portfolioItems = [
   {
-    image: "https://images.squarespace-cdn.com/content/v1/6836cdafaddd114b53af3bb5/5145e0ac-c837-430b-9a27-9974e3a02d4f/TVS+Report.pdf_compressed.pdf.jpg",
+    image: "/images/portfolio/tvs-report.jpg",
     alt: "TVS Report",
     impacts: [
       "306 Metric Tonnes CO2e emissions saved",
@@ -56,7 +56,7 @@ export const portfolioItems = [
     ]
   },
   {
-    image: "https://images.squarespace-cdn.com/content/v1/6836cdafaddd114b53af3bb5/c612de65-d634-43b4-8138-9c524627e8f7/Eco-Femme+Report+3.0+%281%29.pdf.jpg",
+    image: "/images/portfolio/eco-femme-report.jpg",
     alt: "Eco-Femme Report",
     impacts: [
       "0.66 kgCO2e emissions vs 9.09 kgCO2e for disposable pads",
@@ -65,7 +65,7 @@ export const portfolioItems = [
     ]
   },
   {
-    image: "https://images.squarespace-cdn.com/content/v1/6836cdafaddd114b53af3bb5/032b77ae-bada-49b1-9425-83f1ee71dca9/CFC+-+Report+Wireframe+Draft+1.0.pdf.jpg",
+    image: "/images/portfolio/cfc-report.jpg",
     alt: "CFC Report",
     impacts: [],
     title: "Key Impacts Measured:"
@@ -74,19 +74,19 @@ export const portfolioItems = [
 
 export const additionalServices = [
   {
-    image: "https://images.squarespace-cdn.com/content/v1/6836cdafaddd114b53af3bb5/f02e2c62-df85-446d-91ca-1d59b1f8dc1b/transparent_2.png",
+    image: "/images/additional-services/ghg-accounting.png",
     title: "GHG ACCOUNTING",
     description: "Greenhouse Gas emissions measurement and reporting across all scopes with verified accuracy.",
     features: ["Scope 1, 2, 3 emissions", "Carbon footprint analysis", "Reduction strategies"]
   },
   {
-    image: "https://images.squarespace-cdn.com/content/v1/6836cdafaddd114b53af3bb5/7bc902f8-6eb6-45e0-a467-da6e1a4c32d2/transparent_3.png",
+    image: "/images/additional-services/esg-reporting.png",
     title: "ESG REPORTING",
     description: "Environmental, Social, and Governance reporting that meets global standards and stakeholder expectations.",
     features: ["Comprehensive ESG assessments", "Stakeholder engagement", "Regulatory compliance"]
   },
   {
-    image: "https://images.squarespace-cdn.com/content/v1/6836cdafaddd114b53af3bb5/7d7ea7f7-1ba7-48c4-bdcb-62e2dcc61e49/transparent_1.png",
+    image: "/images/additional-services/csr-management.png",
     title: "CSR MANAGEMENT",
     description: "Corporate Social Responsibility programs that create measurable positive impact in communities.",
     features: ["Program design & implementation", "Impact measurement", "Community engagement"]
@@ -94,10 +94,10 @@ export const additionalServices = [
 ];
 
 export const partners = [
-  { name: "Eco Femme", logo: "https://images.squarespace-cdn.com/content/v1/6836cdafaddd114b53af3bb5/c573512f-35c2-4f47-a93f-de29fcbf4daf/eco+femme+logo.png" },
-  { name: "Kinisi", logo: "https://images.squarespace-cdn.com/content/v1/6836cdafaddd114b53af3bb5/d5789c7d-f3f1-4f8b-bb38-935666b6d599/kinisi.jpg" },
-  { name: "Paramesu", logo: "https://images.squarespace-cdn.com/content/v1/6836cdafaddd114b53af3bb5/ca6853e5-a81b-499a-b94d-191fd6969fc2/paramesu+logo+latest+%281%29.png" },
-  { name: "Rangsutra", logo: "https://images.squarespace-cdn.com/content/v1/6836cdafaddd114b53af3bb5/b26e9296-2b4f-4f93-a730-ec6bac53da78/Rangsutra+Logo+Colour.png" }
+  { name: "Eco Femme", logo: "/images/partners/eco-femme-logo.png" },
+  { name: "Kinisi", logo: "/images/partners/kinisi.jpg" },
+  { name: "Paramesu", logo: "/images/partners/paramesu-logo.png" },
+  { name: "Rangsutra", logo: "/images/partners/rangsutra-logo.png" }
 ];
 
 export const footerLinks = [
@@ -135,8 +135,8 @@ export const socialLinks = [
 ];
 
 export const images = {
-  logo: "https://images.squarespace-cdn.com/content/v1/6836cdafaddd114b53af3bb5/71c82ed8-5b80-4695-8c9f-06fe5044e4e9/ChatGPT+Image+May+27%2C+2025%2C+02_33_18+PM+%281%29.png?format=1500w",
-  heroBackground: "https://images.squarespace-cdn.com/content/v1/6836cdafaddd114b53af3bb5/89562c53-37e7-42c0-8403-5d419f91dd57/pexels-willian-matiola-18596444.jpg",
-  aboutMain: "https://images.squarespace-cdn.com/content/v1/6836cdafaddd114b53af3bb5/1748428196178-38LIJNUF6HBDV2F88KZP/unsplash-image-qwHHOC2z5Xs.jpg",
-  footerLogo: "https://images.squarespace-cdn.com/content/v1/6836cdafaddd114b53af3bb5/ac79c4a1-8d74-4106-93cd-05986d32521b/total_impact_logo_white_on_black_cleaned.png"
+  logo: "/images/logo.png",
+  heroBackground: "/images/hero-background.jpg",
+  aboutMain: "/images/about-main.jpg",
+  footerLogo: "/images/footer-logo.png"
 };
