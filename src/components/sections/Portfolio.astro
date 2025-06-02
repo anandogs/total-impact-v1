@@ -1,15 +1,19 @@
 ---
 import Button from '../ui/Button.astro';
 import PortfolioCard from '../ui/PortfolioCard.astro';
-import { portfolioItems } from '../../data/content.js';
+import { getCollection } from 'astro:content';
+
+// Get all portfolio items and sort by order
+const portfolioItems = await getCollection('portfolio');
+const sortedPortfolio = portfolioItems.sort((a, b) => a.data.order - b.data.order);
 ---
 
 <section class="portfolio" id="work">
   <div class="container">
     <h2>Our Work So Far</h2>
     <div class="portfolio-carousel">
-      {portfolioItems.map((item) => (
-        <PortfolioCard item={item} />
+      {sortedPortfolio.map((item) => (
+        <PortfolioCard item={item.data} />
       ))}
     </div>
     <Button variant="secondary" class="portfolio-cta">View All Reports</Button>

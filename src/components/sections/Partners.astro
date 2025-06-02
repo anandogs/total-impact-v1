@@ -1,5 +1,9 @@
 ---
-import { partners } from '../../data/content.js';
+import { getCollection } from 'astro:content';
+
+// Get all partners and sort by order
+const partners = await getCollection('partners');
+const sortedPartners = partners.sort((a, b) => a.data.order - b.data.order);
 ---
 
 <section class="partners">
@@ -7,8 +11,8 @@ import { partners } from '../../data/content.js';
     <h2>Our partners</h2>
     <div class="partners-carousel">
       <div class="partners-track">
-        {[...partners, ...partners].map((partner, index) => (
-          <img src={partner.logo} alt={partner.name} />
+        {[...sortedPartners, ...sortedPartners].map((partner, index) => (
+          <img src={partner.data.logo} alt={partner.data.name} />
         ))}
       </div>
     </div>

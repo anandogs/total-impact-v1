@@ -1,18 +1,22 @@
 ---
-import { additionalServices } from '../../data/content.js';
+import { getCollection } from 'astro:content';
+
+// Get all additional services and sort by order
+const additionalServices = await getCollection('additional-services');
+const sortedServices = additionalServices.sort((a, b) => a.data.order - b.data.order);
 ---
 
 <section class="additional-services">
   <div class="container">
     <h2>Other Key Services</h2>
     <div class="additional-services-grid">
-      {additionalServices.map((service) => (
+      {sortedServices.map((service) => (
         <div class="additional-service">
-          <img src={service.image} alt={service.title} />
-          <h4>{service.title}</h4>
-          <p>{service.description}</p>
+          <img src={service.data.image} alt={service.data.title} />
+          <h4>{service.data.title}</h4>
+          <p>{service.data.description}</p>
           <ul>
-            {service.features.map((feature) => <li>{feature}</li>)}
+            {service.data.features.map((feature) => <li>{feature}</li>)}
           </ul>
         </div>
       ))}
