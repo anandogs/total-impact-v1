@@ -1,0 +1,72 @@
+---
+export interface Props {
+  variant?: 'primary' | 'secondary';
+  size?: 'default' | 'large';
+  href?: string;
+  class?: string;
+}
+
+const { variant = 'primary', size = 'default', href, class: className, ...props } = Astro.props;
+const Tag = href ? 'a' : 'button';
+---
+
+<Tag 
+  class={`btn btn-${variant} ${size === 'large' ? 'btn-large' : ''} ${className || ''}`}
+  href={href}
+  {...props}
+>
+  <slot />
+</Tag>
+
+<style>
+  .btn {
+    padding: 1rem 2.5rem;
+    border: none;
+    border-radius: 25px;
+    font-weight: 500;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: var(--transition);
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    min-width: 200px;
+  }
+
+  .btn-primary {
+    background: #14b8a6;
+    color: var(--white);
+  }
+
+  .btn-primary:hover {
+    background: #0f9488;
+    transform: translateY(-2px);
+  }
+
+  .btn-secondary {
+    background: transparent;
+    color: var(--white);
+    border: 2px solid var(--white);
+  }
+
+  .btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+  }
+
+  .btn-large {
+    padding: 1.25rem 3rem;
+    font-size: 1.1rem;
+  }
+
+  .btn:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+  }
+
+  .btn:active {
+    transform: translateY(1px);
+  }
+</style>

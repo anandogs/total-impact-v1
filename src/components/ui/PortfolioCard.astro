@@ -1,0 +1,68 @@
+---
+import Button from './Button.astro';
+
+export interface Props {
+  item: {
+    image: string;
+    alt: string;
+    impacts: string[];
+    title?: string;
+  };
+}
+
+const { item } = Astro.props;
+---
+
+<div class="portfolio-item">
+  <img src={item.image} alt={item.alt} />
+  <div class="portfolio-content">
+    {item.title ? (
+      <p><strong>{item.title}</strong></p>
+    ) : (
+      <p><strong>Key Impacts:</strong></p>
+    )}
+    {item.impacts.length > 0 && (
+      <ul>
+        {item.impacts.map((impact) => <li>{impact}</li>)}
+      </ul>
+    )}
+    <Button variant="primary">View Report</Button>
+  </div>
+</div>
+
+<style>
+  .portfolio-item {
+    background: var(--white);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-light);
+    transition: var(--transition);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+  }
+
+  .portfolio-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-medium);
+  }
+
+  .portfolio-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+  }
+
+  .portfolio-content {
+    padding: 1.5rem;
+  }
+
+  .portfolio-content ul {
+    margin: 1rem 0;
+    padding-left: 1.2rem;
+  }
+
+  .portfolio-content li {
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    color: var(--text-light);
+  }
+</style>

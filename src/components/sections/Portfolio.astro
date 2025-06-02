@@ -1,0 +1,51 @@
+---
+import Button from '../ui/Button.astro';
+import PortfolioCard from '../ui/PortfolioCard.astro';
+import { portfolioItems } from '../../data/content.js';
+---
+
+<section class="portfolio" id="work">
+  <div class="container">
+    <h2>Our Work So Far</h2>
+    <div class="portfolio-carousel">
+      {portfolioItems.map((item) => (
+        <PortfolioCard item={item} />
+      ))}
+    </div>
+    <Button variant="secondary" class="portfolio-cta">View All Reports</Button>
+  </div>
+</section>
+
+<style>
+  .portfolio {
+    padding: var(--section-padding);
+    background: var(--white);
+  }
+
+  .portfolio h2 {
+    text-align: left;
+    margin-bottom: 4rem;
+    color: var(--text-dark);
+    line-height: 1.1;
+    font-weight: 300;
+    letter-spacing: -0.02em;
+  }
+
+  .portfolio-carousel {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+  }
+
+  :global(.portfolio-cta) {
+    display: block;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 768px) {
+    .portfolio-carousel {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

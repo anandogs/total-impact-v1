@@ -1,0 +1,127 @@
+---
+import { footerLinks, socialLinks, images } from '../../data/content.js';
+---
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <img src={images.footerLogo} alt="Total Impact Logo" />
+      </div>
+
+      <div class="footer-links">
+        {footerLinks.map((column) => (
+          <div class="footer-column">
+            {column.title && <h4>{column.title}</h4>}
+            {column.links.map((link) => (
+              <a href={link.href}>{link.text}</a>
+            ))}
+            {column.title === "Questions?" && (
+              <div class="social-links">
+                {socialLinks.map((social) => (
+                  <a href={social.href} aria-label={social.name}>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                      <path d={social.path}></path>
+                    </svg>
+                  </a>
+                ))}
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background: #000000;
+    color: var(--white);
+    padding: 4rem 0 2rem;
+  }
+
+  .footer-content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 4rem;
+  }
+
+  .footer-brand img {
+    width: 150px;
+    height: auto;
+    margin-bottom: 2rem;
+  }
+
+  .footer-links {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+
+  .footer-column h4 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: var(--white);
+  }
+
+  .footer-column a {
+    display: block;
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    margin-bottom: 0.5rem;
+    transition: var(--transition);
+    font-size: 0.9rem;
+    position: relative;
+  }
+
+  .footer-column a:hover {
+    color: var(--primary-color);
+    transform: translateX(5px);
+  }
+
+  .footer-column a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--primary-color);
+    transition: var(--transition);
+  }
+
+  .footer-column a:hover::after {
+    width: 100%;
+  }
+
+  .social-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .social-links a {
+    font-size: 1.5rem;
+    transition: var(--transition);
+  }
+
+  .social-links a:hover {
+    transform: translateY(-2px) scale(1.1);
+  }
+
+  @media (max-width: 768px) {
+    .footer-content {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .footer-links {
+      grid-template-columns: 1fr;
+    }
+
+    .footer-brand img {
+      width: 80px;
+    }
+  }
+</style>

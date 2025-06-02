@@ -1,0 +1,104 @@
+---
+import { additionalServices } from '../../data/content.js';
+---
+
+<section class="additional-services">
+  <div class="container">
+    <h2>Other Key Services</h2>
+    <div class="additional-services-grid">
+      {additionalServices.map((service) => (
+        <div class="additional-service">
+          <img src={service.image} alt={service.title} />
+          <h4>{service.title}</h4>
+          <p>{service.description}</p>
+          <ul>
+            {service.features.map((feature) => <li>{feature}</li>)}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .additional-services {
+    padding: var(--section-padding);
+    background: var(--bg-dark);
+    color: var(--white);
+  }
+
+  .additional-services h2 {
+    text-align: left;
+    margin-bottom: 4rem;
+    color: var(--white);
+    line-height: 1.1;
+    font-weight: 300;
+    letter-spacing: -0.02em;
+  }
+
+  .additional-services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+  }
+
+  .additional-service {
+    text-align: center;
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: var(--transition);
+  }
+
+  .additional-service:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  .additional-service img {
+    margin-bottom: 1.5rem;
+    width: 120px;
+    height: auto;
+  }
+
+  .additional-service h4 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+    font-weight: 700;
+  }
+
+  .additional-service p {
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 1rem;
+  }
+
+  .additional-service ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 1rem;
+  }
+
+  .additional-service li {
+    margin-bottom: 0.5rem;
+    padding-left: 1rem;
+    position: relative;
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  .additional-service li::before {
+    content: "•";
+    color: var(--primary-color);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+  }
+
+  @media (max-width: 768px) {
+    .additional-services-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

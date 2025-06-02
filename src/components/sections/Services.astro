@@ -1,0 +1,58 @@
+---
+import Button from '../ui/Button.astro';
+import ServiceCard from '../ui/ServiceCard.astro';
+import { services } from '../../data/content.js';
+---
+
+<section class="services" id="services">
+  <div class="container">
+    <h2>What We Do</h2>
+    <div class="services-grid">
+      {services.map((service) => (
+        <ServiceCard service={service} />
+      ))}
+    </div>
+    <div class="services-cta">
+      <Button variant="primary">Book a Discovery Call</Button>
+    </div>
+  </div>
+</section>
+
+<style>
+  .services {
+    padding: var(--section-padding);
+    background: var(--white);
+  }
+
+  .services h2 {
+    text-align: left;
+    margin-bottom: 4rem;
+    color: var(--text-dark);
+    line-height: 1.1;
+    font-weight: 300;
+    letter-spacing: -0.02em;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .services-cta {
+    text-align: center;
+  }
+
+  @media (max-width: 1200px) {
+    .services-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .services-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

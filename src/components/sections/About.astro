@@ -1,0 +1,93 @@
+---
+import Button from '../ui/Button.astro';
+import { images } from '../../data/content.js';
+---
+
+<section class="about" id="about">
+  <div class="container">
+    <div class="about-content">
+      <div class="about-text">
+        <h2>Turning Impact Into <em>Action</em></h2>
+        <div class="about-description">
+          <p>At Total Impact, making a difference is more than a slogan—it's measurable, meaningful, and visible. In a world where every company, social enterprise, and start-up aims to create positive change, Impact Measurement is your compass, guiding you toward what truly matters and cutting through the clutter of vanity metrics.</p>
+          
+          <p>We empower organizations to measure, manage, and communicate their impact with robust frameworks, tech-powered solutions, and powerful storytelling. Our evidence-based insights and actionable strategies help you move beyond meaningless stats and focus on what truly counts.</p>
+          
+          <p>By partnering with Total Impact, you unlock the tools and expertise to drive your transition to sustainable practices, build meaningful social impact, and transparently showcase the true value of your initiatives to stakeholders and the world.</p>
+          
+          <p><strong>Let's measure what matters—together.</strong></p>
+        </div>
+        <Button variant="primary">Learn more</Button>
+      </div>
+      <div class="about-images">
+        <div class="image-stack">
+          <img src={images.aboutMain} alt="Impact measurement" class="image-main" />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .about {
+    padding: var(--section-padding);
+    background: var(--white);
+  }
+
+  .about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .about h2 {
+    color: var(--text-dark);
+    line-height: 1.1;
+    font-weight: 300;
+    letter-spacing: -0.02em;
+  }
+
+  .about em {
+    color: var(--text-dark);
+    font-style: italic;
+    font-weight: 400;
+  }
+
+  .about-description p {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 1.2rem;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+  }
+
+  .about-images {
+    position: relative;
+  }
+
+  .image-stack {
+    position: relative;
+    width: 100%;
+    height: 600px;
+  }
+
+  .image-main {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 0;
+    box-shadow: var(--shadow-medium);
+  }
+
+  @media (max-width: 768px) {
+    .about-content {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+  }
+</style>

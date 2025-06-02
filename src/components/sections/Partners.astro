@@ -1,0 +1,78 @@
+---
+import { partners } from '../../data/content.js';
+---
+
+<section class="partners">
+  <div class="container">
+    <h2>Our partners</h2>
+    <div class="partners-carousel">
+      <div class="partners-track">
+        {[...partners, ...partners].map((partner, index) => (
+          <img key={index} src={partner.logo} alt={partner.name} />
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .partners {
+    padding: var(--section-padding);
+    background: var(--white);
+  }
+
+  .partners h2 {
+    text-align: left;
+    margin-bottom: 4rem;
+    color: var(--text-dark);
+    line-height: 1.1;
+    font-weight: 300;
+    letter-spacing: -0.02em;
+  }
+
+  .partners-carousel {
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+  }
+
+  .partners-track {
+    display: inline-flex;
+    gap: 6rem;
+    animation: scroll 30s linear infinite;
+  }
+
+  .partners-carousel img {
+    height: 60px;
+    width: auto;
+    opacity: 0.6;
+    transition: var(--transition);
+    filter: grayscale(100%);
+    flex-shrink: 0;
+  }
+
+  .partners-carousel img:hover {
+    opacity: 1;
+    filter: grayscale(0%);
+    transform: scale(1.05);
+  }
+
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .partners-track {
+      gap: 2rem;
+    }
+
+    .partners-carousel img {
+      height: 45px;
+    }
+  }
+</style>

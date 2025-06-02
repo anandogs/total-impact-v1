@@ -1,0 +1,179 @@
+/* CSS Variables for consistency */
+:root {
+  --primary-color: #10b981;
+  --secondary-color: #6366f1;
+  --teal-color: #14b8a6;
+  --text-dark: #1f2937;
+  --text-light: #6b7280;
+  --bg-light: #f8fafc;
+  --bg-dark: #1f2937;
+  --white: #ffffff;
+  --max-width: 1400px;
+  --section-padding: 5rem 0;
+  --border-radius: 12px;
+  --shadow-light: 0 4px 6px rgba(0, 0, 0, 0.07);
+  --shadow-medium: 0 10px 25px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, -apple-system, BlinkMacSystemFont, sans-serif;
+  line-height: 1.6;
+  color: var(--text-dark);
+  font-size: 16px;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 700;
+}
+
+h2 {
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  margin-bottom: 1.5rem;
+}
+
+h3 {
+  font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+  font-weight: 400;
+}
+
+h4 {
+  font-size: 1.25rem;
+}
+
+p {
+  font-family: Arial, sans-serif;
+  margin-bottom: 1rem;
+  color: var(--text-light);
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+}
+
+/* Logo Overlay */
+.logo-overlay {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  z-index: 1000;
+}
+
+.logo-overlay img {
+  height: 250px;
+  width: auto;
+}
+
+/* Section Divider */
+.section-divider {
+  width: 100%;
+  height: 50px;
+  background: var(--white);
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.section-divider svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Smooth scrolling and animations */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Loading animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.service-item,
+.portfolio-item,
+.additional-service {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* Ripple effect */
+.ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  transform: scale(0);
+  animation: ripple-animation 0.6s linear;
+  pointer-events: none;
+}
+
+@keyframes ripple-animation {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-light);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #0d9488;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1rem;
+  }
+
+  .logo-overlay {
+    top: 1rem;
+    left: 1rem;
+  }
+
+  .logo-overlay img {
+    height: 65px;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --section-padding: 3rem 0;
+  }
+}
