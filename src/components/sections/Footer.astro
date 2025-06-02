@@ -50,7 +50,7 @@ import { footerLinks, socialLinks, images } from '../../data/content.js';
   .footer-brand img {
     width: 150px;
     height: auto;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
   }
 
   .footer-links {
@@ -114,14 +114,42 @@ import { footerLinks, socialLinks, images } from '../../data/content.js';
     .footer-content {
       grid-template-columns: 1fr;
       gap: 2rem;
+      text-align: center;
+    }
+
+    .footer-brand {
+      text-align: center;
+    }
+
+    .footer-brand img {
+      width: 120px;
+      margin: 0 auto 1rem;
     }
 
     .footer-links {
       grid-template-columns: 1fr;
+      gap: 2rem;
+      text-align: center;
     }
 
-    .footer-brand img {
-      width: 80px;
+    .footer-column {
+      text-align: center;
+    }
+
+    .footer-column h4 {
+      text-align: center;
+    }
+
+    .footer-column a {
+      text-align: center;
+    }
+
+    .footer-column a:hover {
+      transform: translateY(-2px);
+    }
+
+    .social-links {
+      justify-content: center;
     }
   }
 </style>

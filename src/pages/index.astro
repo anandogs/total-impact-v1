@@ -43,12 +43,14 @@ import { images } from '../data/content.js';
 
   @media (max-width: 768px) {
     .logo-overlay {
-      top: 1rem;
-      left: 1rem;
+      top: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
     }
 
     .logo-overlay img {
-      height: 65px;
+      height: 130px; /* Double the current 65px */
     }
   }
 </style>

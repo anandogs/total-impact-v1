@@ -163,12 +163,14 @@ html {
   }
 
   .logo-overlay {
-    top: 1rem;
-    left: 1rem;
+    top: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
   }
 
   .logo-overlay img {
-    height: 65px;
+    height: 130px;
   }
 }
 

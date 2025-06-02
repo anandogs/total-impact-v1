@@ -8,7 +8,7 @@ import { partners } from '../../data/content.js';
     <div class="partners-carousel">
       <div class="partners-track">
         {[...partners, ...partners].map((partner, index) => (
-          <img key={index} src={partner.logo} alt={partner.name} />
+          <img src={partner.logo} alt={partner.name} />
         ))}
       </div>
     </div>
