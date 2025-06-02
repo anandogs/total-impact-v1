@@ -1,11 +1,11 @@
-# Total Impact Website
+# Total Impact Website - Content Management Guide
 
-A modern, responsive website built with Astro showcasing Total Impact's services in impact measurement, management, communication, and technology.
+A modern Astro website with simple content management through Markdown files. Add, edit, or remove content without touching code!
 
 ## 🚀 Quick Start
 
 ```sh
-# Install dependencies
+# Install dependencies (first time only)
 npm install
 
 # Start development server
@@ -13,350 +13,68 @@ npm run dev
 
 # Build for production
 npm run build
-
-# Preview production build
-npm run preview
 ```
 
-## 📁 Project Structure
+## 📝 How Content Works
 
-```
-/
-├── public/                     # Static assets served directly
-│   ├── images/                # All website images
-│   │   ├── services/          # Service icons
-│   │   ├── portfolio/         # Portfolio/report images
-│   │   ├── partners/          # Partner logos
-│   │   ├── additional-services/ # Additional service icons
-│   │   ├── hero-background.jpg
-│   │   ├── about-main.jpg
-│   │   ├── logo.png
-│   │   └── footer-logo.png
-│   └── favicon.svg
-├── src/
-│   ├── components/            # Reusable UI components
-│   │   ├── sections/          # Page sections
-│   │   │   ├── Hero.astro
-│   │   │   ├── About.astro
-│   │   │   ├── Services.astro
-│   │   │   ├── Portfolio.astro
-│   │   │   ├── AdditionalServices.astro
-│   │   │   ├── Partners.astro
-│   │   │   └── Footer.astro
-│   │   └── ui/                # Reusable UI elements
-│   │       ├── Button.astro
-│   │       ├── ServiceCard.astro
-│   │       ├── PortfolioCard.astro
-│   │       └── SectionDivider.astro
-│   ├── data/
-│   │   └── content.js         # All website content and data
-│   ├── layouts/
-│   │   └── Layout.astro       # Base HTML layout
-│   ├── pages/
-│   │   └── index.astro        # Homepage
-│   └── styles/
-│       └── global.css         # Global styles and CSS variables
-├── astro.config.mjs
-├── package.json
-└── tsconfig.json
-```
-
-## 🎨 Design System
-
-### CSS Variables
-All colors and spacing are defined in `src/styles/global.css`:
-
-```css
-:root {
-  --primary-color: rgb(22, 125, 128);    # Main brand color
-  --text-dark: #1f2937;                  # Dark text
-  --text-light: #6b7280;                 # Light text
-  --white: #ffffff;                      # White
-  --bg-light: #f8fafc;                   # Light background
-  --bg-dark: #1f2937;                    # Dark background
-  --section-padding: 5rem 0;             # Standard section padding
-  --border-radius: 12px;                 # Standard border radius
-  --shadow-light: 0 4px 6px rgba(0, 0, 0, 0.07);
-  --shadow-medium: 0 10px 25px rgba(0, 0, 0, 0.1);
-  --transition: all 0.3s ease;           # Standard transition
-}
-```
-
-### Typography
-- **Headings**: Helvetica Neue, responsive sizing with `clamp()`
-- **Body text**: Arial, consistent line-height and spacing
-- **Font weights**: 300 (light), 400 (normal), 500 (medium), 600 (semi-bold), 700 (bold)
-
-### Button Variants
-- **Primary**: Teal background (`rgb(22, 125, 128)`)
-- **Secondary**: Transparent with white border
-- **Sizes**: Default and large
-
-## 📝 Content Management
-
-All website content is centralized in `src/data/content.js`:
-
-### Services
-```javascript
-export const services = [
-  {
-    icon: "/images/services/icon.png",
-    title: "Service Name",
-    description: "Service description...",
-    features: ["Feature 1", "Feature 2", "Feature 3"]
-  }
-];
-```
-
-### Portfolio Items
-```javascript
-export const portfolioItems = [
-  {
-    image: "/images/portfolio/report.jpg",
-    alt: "Report description",
-    impacts: ["Impact 1", "Impact 2", "Impact 3"]
-  }
-];
-```
-
-### Images
-```javascript
-export const images = {
-  logo: "/images/logo.png",
-  heroBackground: "/images/hero-background.jpg",
-  aboutMain: "/images/about-main.jpg",
-  footerLogo: "/images/footer-logo.png"
-};
-```
-
-## 🖼️ Image Management
-
-### Adding New Images
-1. Place images in appropriate `public/images/` subdirectory
-2. Use descriptive filenames (kebab-case)
-3. Optimize images before uploading (WebP recommended)
-4. Reference with absolute paths: `/images/folder/filename.ext`
-
-### Image Guidelines
-- **Services icons**: 60x60px, PNG with transparency
-- **Portfolio images**: Max 800px width, maintain aspect ratio
-- **Partner logos**: Max 120px height, preserve aspect ratio
-- **Hero background**: 1920x1080px minimum, high quality
-
-## 🏗️ Component Architecture
-
-### Section Components (`src/components/sections/`)
-Large page sections with specific functionality:
-- Use semantic HTML5 elements (`<section>`, `<main>`, `<footer>`)
-- Import data from `content.js`
-- Responsive grid layouts
-- Consistent padding using CSS variables
-
-### UI Components (`src/components/ui/`)
-Reusable interface elements:
-- Accept props for customization
-- Use TypeScript interfaces for prop typing
-- Include hover and interaction states
-- Follow consistent naming conventions
-
-### Component Naming Conventions
-- **PascalCase** for component files: `ServiceCard.astro`
-- **camelCase** for props: `variant`, `iconSrc`
-- **kebab-case** for CSS classes: `.service-item`, `.hero-content`
-
-## 📱 Responsive Design
-
-### Breakpoints
-- **Desktop**: 1200px+
-- **Tablet**: 768px - 1199px
-- **Mobile**: < 768px
-
-### Mobile-First Approach
-```css
-/* Base styles for mobile */
-.component { }
-
-/* Tablet and up */
-@media (min-width: 768px) { }
-
-/* Desktop and up */
-@media (min-width: 1200px) { }
-```
-
-### Grid Layouts
-- **Services**: 4 columns → 2 columns → 1 column
-- **Portfolio**: 3 columns → 2 columns → 1 column
-- **Footer**: 2 columns → 1 column (centered)
-
-## 🎭 Animations and Interactions
-
-### Built-in Animations
-- **Fade in on scroll**: Intersection Observer for service/portfolio items
-- **Hover effects**: Transform and shadow changes
-- **Button ripple effect**: Click animation
-- **Smooth scrolling**: For anchor navigation
-
-### Adding New Animations
-```css
-.new-element {
-  transition: var(--transition);
-  transform: translateY(0);
-}
-
-.new-element:hover {
-  transform: translateY(-5px);
-}
-```
-
-## 🔧 Development Guidelines
-
-### Making Content Changes
-1. **Text updates**: Edit `src/data/content.js`
-2. **Styling changes**: Update component `.astro` files or `global.css`
-3. **New sections**: Create in `src/components/sections/`
-4. **New UI elements**: Create in `src/components/ui/`
-
-### Adding New Pages
-1. Create `.astro` file in `src/pages/`
-2. Import and use `Layout.astro`
-3. Follow existing component patterns
-4. Update navigation if needed
-
-### Code Style
-- **Indentation**: 2 spaces
-- **Quotes**: Single quotes for JavaScript, double for HTML attributes
-- **Semicolons**: Required
-- **Component props**: Always define TypeScript interfaces
-
-### Performance Best Practices
-- Use Astro's static generation
-- Optimize images before upload
-- Leverage CSS variables for consistency
-- Minimize JavaScript in components
-
-## 🚀 Deployment
-
-### Build Process
-```sh
-npm run build
-```
-Generates static files in `dist/` directory.
-
-### Environment Setup
-- **Node.js**: 18.20.8+ required
-- **Package manager**: npm, pnpm, or yarn
-- **Astro version**: 5.8.1+
-
-## 🐛 Troubleshooting
-
-### Common Issues
-1. **Images not loading**: Check file paths start with `/images/`
-2. **Styles not applying**: Verify CSS variable usage
-3. **Mobile layout issues**: Test responsive breakpoints
-4. **TypeScript errors**: Check component prop interfaces
-
-### Debug Mode
-```sh
-npm run dev -- --verbose
-```
-
-# Content Management Guide - Markdown Edition 📝
-
-This guide helps you easily manage website content using simple Markdown files. No coding knowledge required!
-
-## 📁 Content Structure
-
-All content is stored in the `src/content/` folder:
+All website content is managed through simple Markdown (`.md`) files in the `src/content/` folder. **When you add new files, they automatically appear on the website!**
 
 ```
 src/content/
-├── services/              # What We Do section
-├── portfolio/             # Our Work So Far section  
-├── partners/              # Partner information
-└── additional-services/   # Other Key Services section
+├── services/              # "What We Do" section (4 cards)
+├── portfolio/             # "Our Work So Far" section
+├── partners/              # Partner logos carousel
+└── additional-services/   # "Other Key Services" section
 ```
 
-## 📝 What is Markdown?
+## ✏️ Adding New Content
 
-Markdown is a simple way to format text using plain text. Here are the basics:
+### 1. Services (What We Do Section)
 
-```markdown
-# This is a main heading
-## This is a subheading
-### This is a smaller heading
+**File location:** `src/content/services/`
 
-**This text is bold**
-*This text is italic*
-
-- This is a bullet point
-- Another bullet point
-- And another one
-
-This is a regular paragraph with normal text.
-```
-
-## ✏️ Editing Services
-
-Location: `src/content/services/`
-
-Each service is a `.md` file with frontmatter (info between `---` lines) and content below:
+Create a new `.md` file (e.g., `new-service.md`):
 
 ```markdown
 ---
-title: "Your Service Name"
+title: "Your New Service"
 icon: "/images/services/your-icon.png"
-description: "Brief description of what this service does."
+description: "Brief description of what this service does (150 chars max)."
 features:
-  - "Feature or benefit 1"
-  - "Feature or benefit 2" 
-  - "Feature or benefit 3"
+  - "Key feature or benefit 1"
+  - "Key feature or benefit 2" 
+  - "Key feature or benefit 3"
 order: 5
 ---
 
-# Service Name
+# Your New Service
 
-Write detailed information about this service here. You can use:
+Write detailed information about this service here.
 
-## Subheadings
+## Our Approach
 
-Regular paragraphs with more explanation.
+Explain your methodology...
 
-### Key Benefits
+## Key Benefits
 
-- **Bold text** for emphasis
-- *Italic text* for subtle emphasis
-- Regular text for descriptions
-
-## How We Help
-
-Explain your process, methodology, or approach here.
+- Benefit one
+- Benefit two
 ```
 
-### 📝 Service Fields Explained:
-- **title**: Service name (appears as heading on website)
-- **icon**: Path to service icon image
-- **description**: Brief explanation (shows on service card)
-- **features**: List of 3-4 key features/benefits
-- **order**: Controls display order (1 = first, 2 = second, etc.)
-- **Content below `---`**: Detailed information (for future service pages)
+**Steps:**
+1. Create new `.md` file in `src/content/services/`
+2. Add service icon to `public/images/services/`
+3. Copy template above and customize
+4. Set `order` number for positioning (1 = first, 5 = last)
 
-### ✅ Service Tips:
-- Keep descriptions under 150 characters
-- Use action-oriented language
-- List 3-4 concrete features
-- Upload icons to `public/images/services/`
-- Keep file names lowercase with hyphens: `impact-measurement.md`
+### 2. Portfolio Items (Our Work So Far)
 
-## 📊 Managing Portfolio Items
-
-Location: `src/content/portfolio/`
-
-Portfolio files include project details and impact metrics:
+**File location:** `src/content/portfolio/`
 
 ```markdown
 ---
-title: "Report Name"
-image: "/images/portfolio/report-image.jpg"
+title: "Project/Report Name"
+image: "/images/portfolio/report-cover.jpg"
 alt: "Description of the image"
 impacts:
   - "306 Metric Tonnes CO2e emissions saved"
@@ -366,40 +84,24 @@ order: 1
 featured: true
 ---
 
-# Report Title
+# Project Name
 
-Write a detailed description of the report and project here.
+Detailed description of the project and its outcomes...
 
-## Key Highlights
+## Key Findings
 
-Explain the most important outcomes and findings.
-
-## Methodology
-
-Describe how the impact was measured:
-- Life Cycle Assessment (LCA)
-- Social Return on Investment (SROI)
-- Stakeholder surveys
-
-## Results
-
-Detail the specific outcomes and their significance.
+Important results and metrics...
 ```
 
-### 📝 Portfolio Fields Explained:
-- **title**: Report/project name
-- **image**: Path to report cover image
-- **alt**: Image description for accessibility
-- **impacts**: List of measurable outcomes (shows on card)
-- **order**: Display order (1 = first)
-- **featured**: `true` or `false` - highlights important reports
-- **Content**: Full project story and details
+**Steps:**
+1. Add report image to `public/images/portfolio/`
+2. Create new `.md` file with descriptive name
+3. List specific impacts with numbers/metrics
+4. Set `featured: true` for highlighted reports
 
-## 🤝 Adding Partners
+### 3. Partners
 
-Location: `src/content/partners/`
-
-Partner files include basic info and collaboration details:
+**File location:** `src/content/partners/`
 
 ```markdown
 ---
@@ -410,30 +112,28 @@ order: 1
 
 # Partnership with [Company Name]
 
-Describe your collaboration and partnership focus.
+Description of your collaboration...
 
 ## What We Do Together
 
-Explain the specific areas of collaboration:
 - Impact measurement projects
 - Sustainability reporting
 - Community engagement
-
-## Partnership Highlights
-
-Share notable achievements or projects from this partnership.
 ```
 
-## 🎯 Additional Services
+**Steps:**
+1. Add partner logo to `public/images/partners/`
+2. Create `.md` file named after partner
+3. Keep logos under 120px height for best display
 
-Location: `src/content/additional-services/`
+### 4. Additional Services (Bottom Section)
 
-These appear in the dark section of the website:
+**File location:** `src/content/additional-services/`
 
 ```markdown
 ---
 title: "SERVICE NAME"
-image: "/images/additional-services/service-icon.png" 
+image: "/images/additional-services/service-icon.png"
 description: "Detailed explanation of this specialized service."
 features:
   - "Specific capability 1"
@@ -444,105 +144,179 @@ order: 1
 
 # Service Name
 
-Provide detailed information about this additional service.
-
-## Our Approach
-
-Explain your methodology and approach.
-
-## Key Benefits
-
-List the main advantages and outcomes clients can expect.
+Detailed service information...
 ```
 
-## 🖼️ Image Guidelines
+## 🖼️ Managing Images
 
-### File Locations:
-- **Service icons**: `public/images/services/`
-- **Portfolio images**: `public/images/portfolio/`
-- **Partner logos**: `public/images/partners/`
-- **Additional service icons**: `public/images/additional-services/`
+### File Structure
+```
+public/images/
+├── services/              # Service icons (60x60px PNG)
+├── portfolio/             # Report covers (800px width max)
+├── partners/              # Partner logos (120px height max)
+├── additional-services/   # Service icons
+├── logo.png              # Main logo
+├── footer-logo.png       # Footer logo
+├── hero-background.jpg   # Hero section background
+└── about-main.jpg        # About section image
+```
 
-### Image Requirements:
-- **Service icons**: 60x60px, PNG with transparency
-- **Portfolio images**: 800px width max, JPG/PNG
-- **Partner logos**: 120px height max, PNG preferred
-- **File names**: Use lowercase with hyphens (e.g., `impact-measurement.png`)
+### Adding Images
+1. **Save to correct folder** in `public/images/`
+2. **Use descriptive names:** `impact-measurement.png`
+3. **Reference in Markdown:** `/images/services/impact-measurement.png`
+4. **Optimize first:** Compress images for web use
 
-## 📝 Content Writing Tips
+### Image Guidelines
+- **Services:** 60x60px, PNG with transparency
+- **Portfolio:** Max 800px width, JPG/PNG
+- **Partners:** Max 120px height, PNG preferred
+- **Names:** Use lowercase with hyphens
 
-### Frontmatter (Between `---` lines):
-- **Always use quotes** around text: `title: "My Service"`
-- **Use proper list format** for arrays:
-  ```yaml
-  features:
-    - "First feature"
-    - "Second feature"
-  ```
-- **Numbers don't need quotes**: `order: 1`
-- **Booleans**: `featured: true` or `featured: false`
+## 📋 Content Editing Rules
 
-### Content Writing:
-- **Use headings** to organize information (`#`, `##`, `###`)
-- **Bold important terms**: `**important**`
-- **Create lists** with `-` or `*`
-- **Keep paragraphs short** for better readability
+### Frontmatter (Between `---` lines)
+```yaml
+# ✅ CORRECT
+title: "My Service Name"
+description: "Service description here."
+features:
+  - "Feature one"
+  - "Feature two"
+order: 1
+featured: true
 
-### Services & Additional Services:
-- **Titles**: Keep under 20 characters
-- **Descriptions**: 1-2 sentences, focus on benefits
-- **Features**: Start with action words (Design, Build, Create, etc.)
+# ❌ WRONG
+title: My Service Name    # Missing quotes
+features: Feature one     # Wrong list format
+order: "1"               # Numbers don't need quotes
+```
 
-### Portfolio Items:
-- **Titles**: Include company/project name
-- **Impacts**: Use specific numbers and metrics
-- **Content**: Tell the complete story of the project's success
+### Writing Tips
+- **Titles:** Keep under 20 characters for services
+- **Descriptions:** 1-2 sentences, focus on benefits
+- **Features:** Start with action words (Design, Build, Create)
+- **Impacts:** Use specific numbers and metrics
+- **Order:** Lower numbers appear first (1, 2, 3...)
 
-## 📱 Markdown Editors
+## 🔄 How Auto-Update Works
 
-### Recommended Free Editors:
-- **Typora** (Windows/Mac) - Live preview while you type
-- **Mark Text** (Windows/Mac/Linux) - Simple and clean
-- **VS Code** (All platforms) - With Markdown preview extension
-- **Online**: Dillinger.io, StackEdit.io
+When you add a new `.md` file:
 
-### Editor Features to Look For:
-- **Live preview** - See formatted result as you type
-- **Syntax highlighting** - Colors to help identify markdown
-- **File management** - Easy access to your content folders
+1. **Astro automatically detects** the new file
+2. **`getCollection()`** function fetches all files from that folder
+3. **Content appears** on the website immediately
+4. **No code changes** needed!
 
-## 🔄 Making Changes
+The website sections automatically update when you:
+- ✅ Add new `.md` files
+- ✅ Edit existing files
+- ✅ Change the `order` field
+- ✅ Add new images
+
+## 📱 Recommended Editors
+
+### Free Markdown Editors
+- **Typora** (Windows/Mac) - Live preview
+- **Mark Text** (All platforms) - Clean interface
+- **VS Code** (All platforms) - With Markdown preview
+- **Online:** Dillinger.io, StackEdit.io
+
+### What to Look For
+- Live preview while you type
+- File management for easy access
+- Syntax highlighting
+
+## 🎨 Customizing Other Content
+
+### Hero Section Text
+**File:** `src/components/sections/Hero.astro`
+```html
+<h1>Fuel your story with <span class="highlight">Impact Intelligence.</span></h1>
+<h3>Ditch the guesswork. Measure metrics that matter.</h3>
+```
+
+### About Section Text
+**File:** `src/components/sections/About.astro`
+Edit the paragraphs in the `<p>` tags.
+
+### Footer Links
+**File:** `src/data/images.js`
+```javascript
+export const footerLinks = [
+  { 
+    title: "Questions?", 
+    links: [{ text: "Contact us", href: "/contact" }] 
+  }
+  // Add more sections...
+];
+```
+
+## 🎯 Quick Reference
 
 ### To Add New Content:
-1. **Create new `.md` file** in appropriate folder
-2. **Copy template** from existing file
-3. **Update frontmatter** with your information
-4. **Write content** using Markdown formatting
-5. **Save file** with descriptive name
+1. **Services:** Create `.md` in `src/content/services/`
+2. **Portfolio:** Create `.md` in `src/content/portfolio/`
+3. **Partners:** Create `.md` in `src/content/partners/`
+4. **Additional Services:** Create `.md` in `src/content/additional-services/`
 
-### To Edit Existing Content:
-1. **Open the `.md` file** in your editor
-2. **Make changes** to frontmatter or content
-3. **Save the file**
-4. **Test locally** (if technical person available)
+### To Change Order:
+- Edit the `order: 1` number in the frontmatter
+- Lower numbers appear first
 
-### To Reorder Items:
-- **Change the `order` number** in frontmatter
-- Lower numbers appear first (1, 2, 3, etc.)
+### To Hide/Show:
+- Delete the `.md` file to remove content
+- Add new `.md` file to show content
 
-## ❓ Getting Help
+### To Update Images:
+1. Replace file in `public/images/folder/`
+2. Keep the same filename, or
+3. Update the path in the `.md` file
 
-**Syntax Questions**: Check the Markdown basics section above
-**Can't Find File**: Check the folder structure diagram
-**Made a Mistake**: Don't worry! All changes can be reversed
-**Need New Images**: Follow the image guidelines section
+## 🐛 Common Issues
 
-### Quick Troubleshooting:
-- **Missing quotes** around text values in frontmatter
-- **Wrong indentation** in lists (use 2 spaces)
-- **Incorrect file extension** (should be `.md`)
-- **Missing frontmatter** (content between `---` lines)
+| Problem | Solution |
+|---------|----------|
+| Content not showing | Check frontmatter syntax (quotes, indentation) |
+| Images not loading | Verify path starts with `/images/` |
+| Wrong order | Check `order` numbers in frontmatter |
+| Markdown not formatting | Check for missing blank lines |
+
+## 🚀 Publishing Changes
+
+### Local Testing
+```sh
+# Test your changes locally
+npm run dev
+
+# Build for production (optional)
+npm run build
+```
+
+### Live Website Updates
+The website is **hosted on Vercel** and automatically rebuilds when changes are pushed to the repository.
+
+**Live site:** [totalimpact.co.in](https://totalimpact.co.in)
+
+**Deployment Process:**
+1. Make your content changes locally
+2. Test with `npm run dev`
+3. Commit and push changes to the repository
+4. Vercel automatically detects the changes
+5. Site rebuilds and deploys (usually takes 2-3 minutes)
+6. Changes are live at totalimpact.co.in
+
+### Deployment Status
+You can monitor deployment status and view build logs in the Vercel dashboard. Any errors during build will be reported there.
+
+## 📞 Need Help?
+
+- **Markdown syntax:** [Basic Markdown Guide](https://www.markdownguide.org/basic-syntax/)
+- **File missing?** Check the folder structure above
+- **Frontmatter errors?** Validate YAML syntax
+- **Images not working?** Verify file paths and names
 
 ---
 
-**Remember**: Markdown files are just text files - you can edit them in any text editor, even Notepad! But a good Markdown editor makes the experience much more pleasant.
+**Remember:** All content changes happen through simple text files. No coding required!
