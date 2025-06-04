@@ -12,7 +12,13 @@ const sortedPartners = partners.sort((a, b) => a.data.order - b.data.order);
     <div class="partners-carousel">
       <div class="partners-track">
         {[...sortedPartners, ...sortedPartners].map((partner, index) => (
-          <img src={partner.data.logo} alt={partner.data.name} />
+          partner.data.website ? (
+            <a href={partner.data.website} target="_blank" rel="noopener noreferrer">
+              <img src={partner.data.logo} alt={partner.data.name} />
+            </a>
+          ) : (
+            <img src={partner.data.logo} alt={partner.data.name} />
+          )
         ))}
       </div>
     </div>
@@ -56,6 +62,16 @@ const sortedPartners = partners.sort((a, b) => a.data.order - b.data.order);
   }
 
   .partners-carousel img:hover {
+    opacity: 1;
+    filter: grayscale(0%);
+    transform: scale(1.05);
+  }
+
+  .partners-carousel a {
+    display: inline-block;
+  }
+
+  .partners-carousel a:hover img {
     opacity: 1;
     filter: grayscale(0%);
     transform: scale(1.05);

@@ -2,6 +2,7 @@
 name: "Rangsutra"
 logo: "/images/partners/rangsutra-logo.png"
 order: 4
+website: "https://www.rangsutra.com"
 ---
 
 # Rangsutra Partnership

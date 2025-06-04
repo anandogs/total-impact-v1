@@ -28,7 +28,8 @@ const partnersCollection = defineCollection({
   schema: z.object({
     name: z.string(),
     logo: z.string(),
-    order: z.number()
+    order: z.number(),
+    website: z.string().optional()
   })
 });
 
