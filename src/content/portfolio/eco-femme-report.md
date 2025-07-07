@@ -8,6 +8,7 @@ impacts:
   - "1.95 kg plastic waste avoided"
 order: 2
 featured: true
+reportUrl: "https://www.canva.com/design/DAGo7jPjcp0/QqyHM2tulvE-QCMyd7xNtQ/view?utm_content=DAGo7jPjcp0&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h81fb733df1"
 ---
 
 # Eco-Femme Impact Report
