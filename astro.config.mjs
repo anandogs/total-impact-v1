@@ -18,6 +18,13 @@ export default defineConfig({
         '.replit.dev',
         '.repl.co'
       ]
+    },
+    preview: {
+      allowedHosts: [
+        '3c53ee0a-0ea6-49a6-a0c0-b5e2f018d4bd-00-1pb5hful4ekf6.spock.replit.dev',
+        '.replit.dev',
+        '.repl.co'
+      ]
     }
   }
 });
