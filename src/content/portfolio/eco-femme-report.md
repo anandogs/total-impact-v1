@@ -2,7 +2,7 @@
 title: "Eco-Femme Impact Report"
 image: "/images/portfolio/eco-femme-report.jpg"
 alt: "Key Impacts"
-Key impacts:
+impacts:
   - "0.66 kgCO2e emissions vs 9.09 kgCO2e for disposable pads"
   - "123 liters water footprint vs 454 liters for disposables"
   - "1.95 kg plastic waste avoided"
