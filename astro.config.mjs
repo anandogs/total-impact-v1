@@ -4,11 +4,18 @@ import { defineConfig } from 'astro/config';
 // https://astro.build/config
 export default defineConfig({
   server: {
-    host: true,
+    host: '0.0.0.0',
     port: 4321
   },
   preview: {
-    host: true,
+    host: '0.0.0.0',
     port: 4321
+  },
+  vite: {
+    preview: {
+      host: '0.0.0.0',
+      port: 4321,
+      strictPort: true
+    }
   }
 });
