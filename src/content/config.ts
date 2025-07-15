@@ -19,7 +19,8 @@ const portfolioCollection = defineCollection({
     alt: z.string(),
     impacts: z.array(z.string()),
     order: z.number(),
-    featured: z.boolean().default(false)
+    featured: z.boolean().default(false),
+    reportUrl: z.string().optional()
   })
 });
 
