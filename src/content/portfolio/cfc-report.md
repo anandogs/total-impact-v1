@@ -2,7 +2,11 @@
 title: "CFC Impact Report"
 image: "/images/portfolio/cfc-report.jpg"
 alt: "CFC Report"
-impacts: []
+impacts:
+  - "306 tCO₂e emissions avoided"
+  - "73 t plastic diverted from landfill"
+  - "Benefited ~35 million people through improved food security"
+  - "4× social return on investment (SROI)"
 order: 3
 featured: false
 ---
