@@ -1,4 +1,3 @@
-
 ---
 title: "Paramesu Biotech Impact Report"
 image: "/images/portfolio/paramesu-report.jpg"
@@ -11,7 +10,7 @@ impacts:
   - "Monitored via IRIS+ KPIs, SDG 6 & 9 aligned"
 order: 5
 featured: true
-reportUrl: "#"
+reportUrl: "https://www.canva.com/design/DAGpAyKY4fA/ps-42rxnC9gtftrZc3I30w/view?utm_content=DAGpAyKY4fA&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h94e29bd9ca"
 ---
 
 # Paramesu Biotech Impact Report
