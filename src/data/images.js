@@ -23,7 +23,7 @@ export const footerLinks = [
     links: [
       { text: "Our Approach", href: "/our-approach" },
       { text: "Blog", href: "/blog" },
-      { text: "Get Started", href: "/get-started" }
+      { text: "Get Started", href: "https://calendly.com/d/cr5h-sgv-yzc/discovery-call-with-total-impact" }
     ] 
   }
 ];
