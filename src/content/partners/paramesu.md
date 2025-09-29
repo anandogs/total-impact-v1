@@ -2,6 +2,7 @@
 name: "Paramesu"
 logo: "/images/partners/paramesu-logo.png"
 order: 3
+website: "https://paramesu.com/"
 ---
 
 # Paramesu Partnership

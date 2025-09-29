@@ -2,6 +2,7 @@
 name: "Kinisi"
 logo: "/images/partners/kinisi.jpg"
 order: 2
+website: "https://kinisi.in/"
 ---
 
 # Kinisi Partnership

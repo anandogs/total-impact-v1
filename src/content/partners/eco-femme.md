@@ -2,6 +2,7 @@
 name: "Eco Femme"
 logo: "/images/partners/eco-femme-logo.png"
 order: 1
+website: "https://ecofemme.org/"
 ---
 
 # Eco Femme Partnership
